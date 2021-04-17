@@ -4,4 +4,4 @@ time set noon
 clear @a[gamemode=!creative]
 function wc:make_rings
 gamemode spectator @a
-scoreboard players set $fake GameState 1 
+scoreboard players set $fake GameState 1

@@ -2,11 +2,11 @@
 
 #1 waiting for 2 players
 #2 10 second gamestart count down
-#3 init game 
+#3 init game
 #4 in game
 #5 1 player left - Game Over (5 seconds) then back to #1
 execute if score $fake GameState matches 1 run function wc:wait_for_two_players
-execute if score $fake GameState matches 2 run function wc:countdown 
+execute if score $fake GameState matches 2 run function wc:countdown
 execute if score $fake GameState matches 4 run function wc:main_game
 execute if score $fake GameState matches 5 run function wc:winner_screen
 
@@ -27,5 +27,3 @@ scoreboard players enable @a RulesAgree
 tag @p[scores={RulesAgree=1}] add RulesAgree
 tellraw @p[scores={RulesAgree=1}] {"text":"Thanks. Welcome to Weaponized Creeper Wars","color":"green"}
 scoreboard players set @p[scores={RulesAgree=1}] RulesAgree 0
-
-

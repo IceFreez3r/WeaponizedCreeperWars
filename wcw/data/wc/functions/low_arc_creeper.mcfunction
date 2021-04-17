@@ -1,4 +1,4 @@
-#36 possible directions the creeper can be thrown at with a low arc 
+#36 possible directions the creeper can be thrown at with a low arc
 execute at @p[limit=1,y_rotation=175..185] run data merge entity @e[tag=lob_creeper,limit=1,distance=..6] {Tags:["flying_creeper"],Motion:[0.00,0.5,-2.00]}
 execute at @p[limit=1,y_rotation=-185..-175] run data merge entity @e[tag=lob_creeper,limit=1,distance=..6] {Tags:["flying_creeper"],Motion:[0.00,0.5,-2.00]}
 execute at @p[limit=1,y_rotation=-175..-165] run data merge entity @e[tag=lob_creeper,limit=1,distance=..6] {Tags:["flying_creeper"],Motion:[0.35,0.5,-1.97]}

@@ -12,8 +12,6 @@ scoreboard players enable @p SurvivalMode
 execute if entity @p[scores={SurvivalMode=1}] run function wc:single_player_survival
 
 
-
-
 function wc:combat_mechanics
 
 

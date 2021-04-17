@@ -40,4 +40,3 @@ setblock ~ ~2 ~-2 minecraft:mossy_cobblestone
 setblock ~-2 ~2 ~ minecraft:mossy_cobblestone
 
 fill ~-2 ~3 ~-2 ~2 ~3 ~2 minecraft:mossy_cobblestone
-

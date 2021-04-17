@@ -15,9 +15,6 @@ data merge entity @e[limit=1,tag=rampage,nbt={NoAI:1b},scores={StateCounter=100.
 execute if entity @e[tag=rampage_active] run function wc:rampage_active
 
 
-
-
-
 #Lob high arc creeper grenade if looking towards your feet
 execute at @p[limit=1,x_rotation=45..] run function wc:high_arc_creeper
 #Lob low arc creeper grenade if looking more upwards
@@ -49,7 +46,7 @@ tp @e[type=wolf] ~ -10 ~
 kill @e[type=wolf]
 
 
-#Amplifier:101b on any creeper blows it up if hte arrow doesn't kill it first. Good for explding bomb creepers
+#Amplifier:101b on any creeper blows it up if the arrow doesn't kill it first. Good for exploding bomb creepers
 data merge entity @e[limit=1,type=creeper,nbt={ActiveEffects:[{Amplifier:101b}]}] {Fuse:0}
 
 #Amplifier:101b arrow on ground, summon creeper
@@ -88,8 +85,7 @@ scoreboard players set @e[tag=pummel_from_arrow] StateCounter 100
 #kill the pummeler so it doesn't last forever on the spawn platform. All others will die in the void
 kill @e[type=creeper,x=-200,y=0,z=-200,dx=400,dy=4,dz=400]
 scoreboard players add @e[tag=pummel_creeper,nbt={OnGround:1b}] StateCounter 1
-execute at @e[tag=pummel_creeper,scores={StateCounter=100..},nbt={OnGround:1b}] run summon tnt ~ ~-1 ~ 
-
+execute at @e[tag=pummel_creeper,scores={StateCounter=100..},nbt={OnGround:1b}] run summon tnt ~ ~-1 ~
 
 
 #Amplifier:4b on ground, summon chaser creeper
@@ -108,7 +104,6 @@ scoreboard players add @e[tag=creeper_bomb] StateCounter 1
 data merge entity @e[limit=1,tag=creeper_bomb,scores={StateCounter=100}] {Fuse:1,powered:1b}
 
 
-
 #kill any type of arrow in the ground
 kill @e[type=arrow,limit=1,nbt={inGround:1b}]
 
@@ -117,14 +112,14 @@ kill @e[type=arrow,limit=1,nbt={inGround:1b}]
 scoreboard players add @e[type=egg] StateCounter 1
 execute if entity @e[type=egg,scores={StateCounter=5},x=0,y=128,z=0,distance=..124] run function wc:deploy_net
 
-#glass sheild
+#glass shield
 scoreboard players add @e[type=snowball] StateCounter 1
-execute at @e[type=snowball,scores={StateCounter=1}] at @p[limit=1,x_rotation=80..90] run tag @e[type=snowball,limit=1,scores={StateCounter=1}] add FloorRoof 
-execute at @e[type=snowball,scores={StateCounter=1}] at @p[limit=1,x_rotation=-90..-80] run tag @e[type=snowball,limit=1,scores={StateCounter=1}] add FloorRoof 
+execute at @e[type=snowball,scores={StateCounter=1}] at @p[limit=1,x_rotation=80..90] run tag @e[type=snowball,limit=1,scores={StateCounter=1}] add FloorRoof
+execute at @e[type=snowball,scores={StateCounter=1}] at @p[limit=1,x_rotation=-90..-80] run tag @e[type=snowball,limit=1,scores={StateCounter=1}] add FloorRoof
 execute at @e[type=snowball,scores={StateCounter=1}] at @p[limit=1,y_rotation=135..225] run tag @e[type=snowball,limit=1,scores={StateCounter=1},tag=!FloorRoof] add NorthSouth
-execute at @e[type=snowball,scores={StateCounter=1}] at @p[limit=1,y_rotation=-45..45] run tag @e[type=snowball,limit=1,scores={StateCounter=1},tag=!FloorRoof] add NorthSouth  
-execute at @e[type=snowball,scores={StateCounter=1}] at @p[limit=1,y_rotation=-135..-45] run tag @e[type=snowball,limit=1,scores={StateCounter=1},tag=!FloorRoof,tag=!NorthSouth] add EastWest 
-execute at @e[type=snowball,scores={StateCounter=1}] at @p[limit=1,y_rotation=45..135] run tag @e[type=snowball,limit=1,scores={StateCounter=1},tag=!FloorRoof,tag=!NorthSouth] add EastWest 
+execute at @e[type=snowball,scores={StateCounter=1}] at @p[limit=1,y_rotation=-45..45] run tag @e[type=snowball,limit=1,scores={StateCounter=1},tag=!FloorRoof] add NorthSouth
+execute at @e[type=snowball,scores={StateCounter=1}] at @p[limit=1,y_rotation=-135..-45] run tag @e[type=snowball,limit=1,scores={StateCounter=1},tag=!FloorRoof,tag=!NorthSouth] add EastWest
+execute at @e[type=snowball,scores={StateCounter=1}] at @p[limit=1,y_rotation=45..135] run tag @e[type=snowball,limit=1,scores={StateCounter=1},tag=!FloorRoof,tag=!NorthSouth] add EastWest
 execute if entity @e[type=snowball,scores={StateCounter=10},x=0,y=128,z=0,distance=..124] run function wc:deploy_glass_shield
 
 
@@ -141,6 +136,3 @@ execute if entity @p[gamemode=survival,scores={StateCounter=100..}] run scoreboa
 title @p[gamemode=survival,x=0,y=128,z=0,distance=126..] title {"text":"OUT OF BOUNDS","color":"red"}
 title @p[gamemode=survival,x=0,y=128,z=0,distance=126..] subtitle {"text":"You have been eliminated","color":"green"}
 gamemode spectator @p[gamemode=survival,x=0,y=128,z=0,distance=126..]
-
-
-

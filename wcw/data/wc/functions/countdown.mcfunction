@@ -10,4 +10,3 @@ execute if score $fake StateCounter matches 40 run title @a title {"text":"Game 
 execute if score $fake StateCounter matches 20 run title @a title {"text":"Game Starting in 1 second","color":"red"}
 execute if score $fake StateCounter matches 0 run function wc:makeplatforms
 scoreboard players remove $fake StateCounter 1
-

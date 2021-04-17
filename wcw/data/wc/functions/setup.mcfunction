@@ -3,9 +3,8 @@
 # stuff like that.
 
 
-#Remove void world platform. 
+#Remove void world platform.
 fill 24 3 24 -16 3 -16 minecraft:air
-
 
 
 #directly under the rings. A player who dies will spawn on this and will be imediately be out of bounds
@@ -15,7 +14,7 @@ fill 1 1 1 -1 1 -1 minecraft:barrier
 gamemode spectator @a
 
 bossbar add next_supply {"text":"Next Supply Drop","color":"green"}
-bossbar set minecraft:next_supply color green 
+bossbar set minecraft:next_supply color green
 bossbar set minecraft:next_supply max 800
 
 time set noon
