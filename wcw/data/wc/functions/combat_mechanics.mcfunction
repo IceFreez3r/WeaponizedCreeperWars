@@ -129,6 +129,10 @@ execute at @e[type=snowball,scores={StateCounter=1}] as @p if entity @s[y_rotati
 execute if entity @e[type=snowball,scores={StateCounter=10},x=0,y=128,z=0,distance=..124] run function wc:deploy_glass_shield
 
 
+# Rocket Booster
+execute as @e[type=firework_rocket,tag=rocket_booster] at @s run function wc:rocket_booster
+
+
 #Warn Out of Bounds
 scoreboard players add @a[gamemode=survival,x=0,y=128,z=0,distance=123..] StateCounter 1
 effect give @a[gamemode=survival,x=0,y=128,z=0,distance=123..] blindness 2
